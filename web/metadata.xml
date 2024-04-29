@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE property-groups PUBLIC "-//OpenKM//DTD Property Groups 3.9//EN"
+                                 "http://www.openkm.com/dtd/property-groups-3.9.dtd">
+<property-groups>
+  <!-- TYPE DOCUMENT -->
+  <property-group label="Document type" name="okg:invoice_doc_type">
+    <select label="Type" name="okp:invoice_doc_type.type" type="simple"
+            className="com.openkm.plugin.form.values.OptionDocumentTypeList"/>
+  </property-group>
+
+  <!-- INVOICE CAPTURE -->
+  <property-group label="Invoice" name="okg:invoice">
+    <input label="Company" type="text" name="okp:invoice.cif">
+      <validator type="req"/>
+    </input>
+     <!--
+       WARNING -> CURRENTLY SUGGESTBOX DO NOT ALLOW PLUGIN TO RETRIEVE DATA
+       TO GET WORKING MAYBE NECESSARY CREATE ALIAS IN OPENKM DATABASE TO THE INV_COMPANY TABLE
+       IN THE CASE OF INVOICE INSTALLED IN SEVERAL TENANT SHOULD CREATE ALIAS OF THE TABLES WITH DIFFERENT NAMES
+
+       Replace okp:invoice.cif for this, if you want to search companies from OpenKM UI -->
+     <!-- <suggestbox label="Company" name="okp:invoice.cif"
+ 	 	 width="200px" dialogTitle="Choose company" filterMinLen="3"
+     	 filterQuery="select CMP_CIF, CMP_NAME from INV_COMPANY where UPPER(CMP_NAME) like UPPER('%{0}%') order by CMP_NAME"
+     	 valueQuery="select CMP_CIF, CMP_NAME from INV_COMPANY where CMP_CIF = '{0}'">
+        <validator type="req"/>
+    </suggestbox> -->
+    <input label="Invoice number" type="text" name="okp:invoice.num_invoice">
+      <validator type="req"/>
+    </input>
+    <select label="Status" type="simple" name="okp:invoice.status">
+      <option label="sent" value="0"/>
+      <option label="received" value="1" selected="true"/>
+      <validator type="req"/>
+    </select>
+    <select label="VAT" type="simple" name="okp:invoice.vat">
+      <option label="21%" value="21"/>
+      <option label="10%" value="10"/>
+      <option label="4%" value="4"/>
+      <validator type="req"/>
+    </select>
+    <input label="SUB TOTAL" type="text" name="okp:invoice.subtotal">
+      <validator type="req"/>
+      <validator type="dec"/>
+    </input>
+    <input label="TOTAL" type="text" name="okp:invoice.total">
+      <validator type="req"/>
+      <validator type="dec"/>
+    </input>
+    <input label="Date" type="date" name="okp:invoice.date">
+      <validator type="req"/>
+    </input>
+    <!--
+    <textarea label="Delivery notes" name="okp:invoice.delivery_notes"></textarea>
+    -->
+
+    <!-- Automatic internal fields -->
+    <input label="Year" type="text" name="okp:invoice.year" readonly="true"/>
+    <input label="Month" type="text" name="okp:invoice.month" readonly="true"/>
+    <input label="User" type="text" name="okp:invoice.user" readonly="true"/>
+    <input label="Provider code" type="text" name="okp:invoice.prov_code" readonly="true"/>
+    <input label="Provider name" type="text" name="okp:invoice.prov_name" readonly="true"/>
+  </property-group>
+
+  <!-- DELIVERY NOTE -->
+  <property-group label="Delivery note" name="okg:delivery_note">
+    <input label="Company" type="text" name="okp:delivery_note.cif">
+      <validator type="req"/>
+    </input>
+    <input label="Invoice number" type="text" name="okp:delivery_note.num_invoice">
+      <validator type="req"/>
+    </input>
+    <select label="Status" type="simple" name="okp:delivery_note.status">
+      <option label="sent" value="0"/>
+      <option label="received" value="1" selected="true"/>
+      <validator type="req"/>
+    </select>
+    <select label="VAT" type="simple" name="okp:delivery_note.vat">
+      <option label="21%" value="21"/>
+      <option label="10%" value="10"/>
+      <option label="4%" value="4"/>
+      <validator type="req"/>
+    </select>
+    <input label="SUB TOTAL" type="text" name="okp:delivery_note.subtotal">
+      <validator type="req"/>
+      <validator type="dec"/>
+    </input>
+    <input label="TOTAL" type="text" name="okp:delivery_note.total">
+      <validator type="req"/>
+      <validator type="dec"/>
+    </input>
+    <input label="Date" type="date" name="okp:delivery_note.date">
+      <validator type="req"/>
+    </input>
+
+    <!-- Automatic internal fields -->
+    <input label="Year" type="text" name="okp:delivery_note.year" readonly="true"/>
+    <input label="Month" type="text" name="okp:delivery_note.month" readonly="true"/>
+    <input label="User" type="text" name="okp:delivery_note.user" readonly="true"/>
+  </property-group>
+</property-groups>
