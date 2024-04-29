@@ -1,0 +1,224 @@
+@CHARSET "UTF-8";
+
+body {
+    background-color: #CCCCCC !important;
+    padding: 10px;
+}
+
+.okm-breadcrumb {
+    margin-top: 0px !important;
+    border-radius: 0px !important;
+    background-color: #7784a4 !important;
+    color: white !important;
+    margin-bottom: 0px !important;
+}
+
+.okm-breadcrumb li {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.panel-body {
+    background-color: #7784a4;
+    /* color:#ffffff; */
+}
+
+.control-label {
+    color: #ffffff;
+}
+
+.form-control {
+    background-color: #ffffff !important;
+}
+
+.panel-title {
+    font-size: 14px;
+    margin: 15px 0px 15px 0px;
+    text-transform: uppercase;
+}
+
+.panel-footer {
+    background-color: #7784a4;
+    color: #ffffff;
+    text-align: center;
+}
+
+.tip {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    background: transparent;
+    border: 10px solid #ccc;
+}
+
+.tip-up {
+    top: -25px;
+/ / Same as body margin top + border left: 10 px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+
+.tip-down {
+    bottom: -25px;
+    left: 10px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.tip-left {
+    top: 10px;
+    left: -25px;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.tip-right {
+    top: 10px;
+    right: -25px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.dialogbox-login {
+    position: relative;
+    left: 370px;
+    top: -225px;
+    max-width: 200px;
+    height: auto;
+    margin: 25px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+}
+
+.dialogbox-doctype {
+    position: relative;
+    left: 550px;
+    top: -170px;
+    max-width: 200px;
+    height: auto;
+    margin: 25px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+}
+
+.dialogbox-parameter {
+    position: relative;
+    left: 550px;
+    top: -475px;
+    max-width: 200px;
+    height: auto;
+    margin: 25px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+}
+
+.dialogbox-upload {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    max-width: 200px;
+    height: auto;
+    margin: 25px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+}
+
+
+.body .message {
+    min-height: 30px;
+    border-radius: 3px;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #797979;
+}
+
+.btn2 {
+    background: #c2c2c2;
+    background-image: -webkit-linear-gradient(top, #c2c2c2, #fcfcfc);
+    background-image: -moz-linear-gradient(top, #c2c2c2, #fcfcfc);
+    background-image: -ms-linear-gradient(top, #c2c2c2, #fcfcfc);
+    background-image: -o-linear-gradient(top, #c2c2c2, #fcfcfc);
+    background-image: linear-gradient(to bottom, #c2c2c2, #fcfcfc);
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    font-family: Arial;
+    color: #333333 !important;
+    font-size: 12px;
+    padding: 7px 18px 7px 18px;
+    text-decoration: none;
+}
+
+.btn2:hover {
+    text-decoration: none;
+}
+
+#ps-header {
+    height: 150px !important;
+}
+
+#ps-logo {
+    height: 75px;
+}
+
+#ps-menu a {
+    color: #000000 !important;
+}
+
+navbar-nav > li > a:hover {
+    color: #000000 !important;
+}
+
+.navbar-brand img {
+    height: 80px;
+    margin: 35px;
+
+}
+
+.dropdown-toggle {
+    color: #333333 !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+
+.top-navbar {
+    background-color: #CCCCCC !important;
+}
+
+.container-fluid {
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 1px solid #555555;
+
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #edeff0;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+    z-index: 1;
+}
+
+/*
+.input-group.date .input-group-addon {
+	color:#000000 !important;
+}
+*/
