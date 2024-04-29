@@ -1,0 +1,375 @@
+@CHARSET "UTF-8";
+
+body {
+    background-color: #CCCCCC !important;
+    overflow-x: hidden;
+    font-size: 12px; /* Tamade fuente personalizado */
+    color: #0f0f0f; /* Color de texto personalizado */
+    font-family: "Roboto", sans-serif;
+}
+
+.body-index {
+    background-color: #f1f1f1 !important;
+    overflow-x: hidden;
+    font-size: 12px; /* Tamade fuente personalizado */
+    color: #0f0f0f; /* Color de texto personalizado */
+    font-family: "Roboto", sans-serif;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+.navbar {
+    padding-top: 0;
+}
+/* Color de fondo gris para el conjunto de pesta*/
+.nav-tabs {
+    background-color: #ccc; /* Cambiar a cualquier color de fondo deseado */
+    border: none; /* Eliminar el borde */
+}
+
+/* Color de fondo gris para los paneles de contenido de las pesta*/
+.tab-content {
+    background-color: #ccc; /* Cambiar a cualquier color de fondo deseado */
+}
+.form-background {
+    background-color: white !important;
+}
+.okm-breadcrumb {
+    margin-top: 0px !important;
+    border-radius: 0px !important;
+    background-color: #7784a4 !important;
+    color: white !important;
+    margin-bottom: 0px !important;
+}
+
+.okm-breadcrumb li {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.panel-body {
+    background-color: #7784a4;
+    /* color:#ffffff; */
+}
+
+.control-label {
+    color: #ffffff;
+}
+
+.form-control {
+    background-color: #ffffff !important;
+}
+
+.panel-title {
+    font-size: 14px;
+    margin: 15px 0px 15px 0px;
+    text-transform: uppercase;
+}
+
+.panel-footer {
+    background-color: #7784a4;
+    color: #ffffff;
+    text-align: center;
+}
+
+.tip {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    background: transparent;
+    border: 10px solid #ccc;
+}
+
+.tip-up {
+    top: -25px; /* Same as body margin top + border */
+    left: 10px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+
+.tip-down {
+    bottom: -25px;
+    left: 10px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.tip-left {
+    top: 10px;
+    left: -25px;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.tip-right {
+    top: 10px;
+    right: -25px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.login-container {
+    max-width: 400px;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+}
+
+.dialogbox-login {
+    position: relative;
+    left: 370px;
+    top: -225px;
+    max-width: 200px;
+    height: auto;
+    margin: 25px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+}
+
+.dialogbox-doctype {
+    position: relative;
+    left: 550px;
+    top: -170px;
+    max-width: 200px;
+    height: auto;
+    margin: 25px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+}
+
+.dialogbox-parameter {
+    position: relative;
+    left: 550px;
+    top: -475px;
+    max-width: 200px;
+    height: auto;
+    margin: 25px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+}
+
+.dialogbox-upload {
+    position: relative;
+    left: 0;
+    top: 0;
+    max-width: 300px;
+    height: auto;
+    margin: 25px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+}
+
+.body .message {
+    min-height: 30px;
+    border-radius: 3px;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #797979;
+}
+label.label-custom {
+    font-size: 12px; /* Tamade fuente personalizado */
+    color: #0f0f0f; /* Color de texto personalizado */
+    font-family: "Roboto", sans-serif;
+    /* Otros estilos personalizados si es necesario */
+}
+
+.btn2 {
+    background: #c2c2c2;
+    background-image: -webkit-linear-gradient(top, #c2c2c2, #fcfcfc);
+    background-image: -moz-linear-gradient(top, #c2c2c2, #fcfcfc);
+    background-image: -ms-linear-gradient(top, #c2c2c2, #fcfcfc);
+    background-image: -o-linear-gradient(top, #c2c2c2, #fcfcfc);
+    background-image: linear-gradient(to bottom, #c2c2c2, #fcfcfc);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    font-family: Arial;
+    color: #333333 !important;
+    font-size: 12px;
+    padding: 7px 18px 7px 18px;
+    text-decoration: none;
+}
+
+.btn2:hover {
+    text-decoration: none;
+}
+
+#ps-header {
+    height: 150px !important;
+}
+
+#ps-logo {
+    height: 75px;
+}
+
+#ps-menu a {
+    color: #000000 !important;
+}
+
+navbar-nav > li > a:hover {
+    color: #000000 !important;
+}
+
+.navbar-brand img {
+    height: 80px;
+    margin: 35px;
+}
+
+.dropdown-toggle {
+    color: #333333 !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+.top-navbar {
+    background-color: #CCCCCC !important;
+}
+
+.container-fluid {
+    padding: 0;
+    border: 0;
+}
+
+/*
+.input-group.date .input-group-addon {
+	color:#000000 !important;
+}
+*/
+
+.bootstrap-select {
+    width: 100% !important;
+}
+
+.selectpicker-custom {
+    text-decoration: none !important;
+    background-color: white;
+    text-transform: capitalize;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    color: #555 !important;
+}
+
+.form-group label {
+    display: block; /* Hace que las etiquetas sean elementos de bloque */
+}
+
+.custom-input {
+    height: 25px; /* Altura del input */
+}
+
+.eliminarInput {
+    font-size: 9px; /* Tamade la fuente del bot*/
+    padding: 2px 4px; /* Ajusta el relleno del bot*/
+}
+
+.espacio-entre-inputs {
+    margin-bottom: 10px; /* Agrega un margen inferior entre cada fila */
+}
+
+.separator-row {
+    border-bottom: 2px solid #ddd; /* Borde inferior sde 2px de grosor y color gris */
+}
+
+.sub-key-value-container {
+    display: flex;
+    flex-direction: row; /* Alinear los elementos en la misma l*/
+}
+
+.sub-key {
+    font-weight: bold; /* Opcional: puedes agregar negrita a las subclaves */
+    margin-right: 5px; /* Aespacio entre la subclave y el valor */
+}
+
+#searchButtonIndex {
+    background-color: rgb(218, 214, 72);!important;
+    color: grey !important;
+    border-radius: 20px !important;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0px 4px rgba(118, 116, 48, 0.8); /* Sombra hacia abajo */
+}
+
+#searchExternalButtonIndex {
+    background-color: rgb(218, 214, 72);!important;
+    color: grey !important;
+    border-radius: 20px !important;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0px 4px rgba(118, 116, 48, 0.8); /* Sombra hacia abajo */
+}
+
+.flex-container {
+    display: flex; /* Configura el contenedor como Flexbox */
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+}
+
+.advanced-search {
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 14px;
+}
+.label-style{
+    color:rgb(241,196,15);
+    text-align: center;
+    font-size: 16px;
+}
+#searchButton {
+    background-color: rgb(218, 214, 72);!important;
+    color: grey !important;
+    border-radius: 20px !important;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 4px rgba(118, 116, 48, 0.8);
+    border: none !important;
+    outline: none !important;
+}
+#searchButtonExternal {
+    background-color: rgb(218, 214, 72);!important;
+    color: grey !important;
+    border-radius: 20px !important;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 4px rgba(118, 116, 48, 0.8);
+    border: none !important;
+    outline: none !important;
+}
+#cleanButton {
+    background-color: rgb(212, 213, 205);!important;
+    color: grey !important;
+    border-radius: 20px !important;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 4px rgba(118, 116, 48, 0.8);
+    border: none !important;
+    outline: none !important;
+}
+#cleanButtonExternal {
+    background-color: rgb(212, 213, 205);!important;
+    color: grey !important;
+    border-radius: 20px !important;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 4px rgba(118, 116, 48, 0.8);
+    border: none !important;
+    outline: none !important;
+}
