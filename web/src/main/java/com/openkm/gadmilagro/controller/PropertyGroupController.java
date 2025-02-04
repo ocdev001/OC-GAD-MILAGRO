@@ -97,10 +97,10 @@ public class PropertyGroupController {
 
 	private String generatePreviewUrl(String uuid) throws Exception {
 		StringBuilder previewUrl = new StringBuilder();
+		OKMWebservices ws = this.cs.getAdminWebServices();
 		if (StringUtils.isNotEmpty(uuid)) {
 			previewUrl.append(this.cfg.getPreviewToOpenKMUrl());
-			OKMWebservices ws = this.cs.getAdminWebServices();
-			String token = ws.node.generateDownloadToken(uuid, true);
+			String token = ws.node.generateDownloadToken(uuid, true, false, null);
 			previewUrl.append("&pdfUrl=");
 			previewUrl.append(getPdfUrl(token));
 		}

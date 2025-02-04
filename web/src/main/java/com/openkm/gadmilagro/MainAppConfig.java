@@ -24,6 +24,7 @@ package com.openkm.gadmilagro;
 import com.openkm.gadmilagro.config.Config;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -40,12 +41,11 @@ import java.util.Properties;
  * or @SpringBootApplication) will be searched.
  */
 @EnableScheduling
-@SpringBootApplication(exclude = JmsAutoConfiguration.class)
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, JmsAutoConfiguration.class})
 public class MainAppConfig extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(MainAppConfig.class, args);
 	}
-
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(MainAppConfig.class).properties(getProperties());

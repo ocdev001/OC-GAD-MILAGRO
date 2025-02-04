@@ -28,12 +28,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Config {
-	public static final String PROPERTIES = "eds-capture.properties";
+	public static final String PROPERTIES = "gadmilagro.properties";
 
 	public static final String PREVIEW_ENGINE = "PDF.js";
 
-	@Value("${spring.jpa.properties.hibernate.dialect}")
-	public String HIBERNATE_DIALECT;
 
 	@Value("${openkm.url}")
 	public String OPENKM_URL;
@@ -50,25 +48,17 @@ public class Config {
 	@Value("${preview.download.url}")
 	public String PREVIEW_DOWNLOAD_URL;
 
-	@Value("${standard.import.node}")
-	public String STANDARD_IMPORT_NODE;
 
-	@Value("${advanced.import.node}")
-	public String ADVANCED_IMPORT_NODE;
-
-	@Value("${languages}")
-	public String AVAILABLE_LANGUAGES;
-
-	@Value("${default.language}")
+	@Value("default.language")
 	public String DEFAULT_LANGUAGE;
 
-	@Value("${app.logo}")
+	@Value("app.logo")
 	public String APP_LOGO;
 
-	@Value("${app.logo.login}")
+	@Value("app.logo.login")
 	public String APP_LOGO_LOGIN;
 
-	@Value("${root.destination.folder.path}")
+	@Value("root.destination.folder.path")
 	public String ROOT_DESTINATION_FOLDER;
 
 	@Value("${filter.companies.by.user.upload.documents}")

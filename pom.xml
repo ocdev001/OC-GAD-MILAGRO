@@ -45,8 +45,8 @@
   </developers>
 
   <properties>
-    <sdk4j.version>3.24</sdk4j.version>
-    <openkm.version>7.1.34</openkm.version>
+    <sdk4j.version>3.34</sdk4j.version>
+    <openkm.version>7.1.45</openkm.version>
 
     <!-- Compiler properties -->
     <java.version>1.8</java.version>

@@ -45,24 +45,7 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 @ComponentScan("com.openkm")
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	@Autowired
-	@Qualifier("dataSource")
-	DataSource dataSource;
 
-
-	@Autowired
-	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-		auth.jdbcAuthentication()
-				.dataSource(dataSource)
-				.passwordEncoder(passwordEncoder())
-				.usersByUsernameQuery("select USR_ID, USR_PASSWORD, 1 from INV_USER where USR_ID=?")
-				.authoritiesByUsernameQuery("select USR_ID, USR_ROLE from INV_USER where USR_ID=?");
-	}
-
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -81,10 +64,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.anyRequest().permitAll();
 	}
 
-	@Bean
-	public PersistentTokenRepository persistentTokenRepository() {
-		JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
-		tokenRepository.setDataSource(dataSource);
-		return tokenRepository;
-	}
+
 }

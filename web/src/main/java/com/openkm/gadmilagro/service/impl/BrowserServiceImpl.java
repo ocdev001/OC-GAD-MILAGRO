@@ -26,7 +26,6 @@ import com.openkm.gadmilagro.bean.PropertiesGroupsGroups;
 import com.openkm.gadmilagro.bean.searchForm;
 import com.openkm.gadmilagro.cache.WSCacheDAO;
 import com.openkm.gadmilagro.config.Config;
-import com.openkm.gadmilagro.config.I18nConfig;
 
 import com.openkm.gadmilagro.service.BrowserService;
 
@@ -68,8 +67,6 @@ import org.springframework.stereotype.Service;
 public class BrowserServiceImpl implements BrowserService {
 	private static final Logger log = LoggerFactory.getLogger(com.openkm.gadmilagro.service.impl.BrowserServiceImpl.class);
 
-	@Autowired
-	private I18nConfig i18nConfig;
 
 	@Autowired
 	private WSCacheDAO wsDao;
