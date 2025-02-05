@@ -55,7 +55,7 @@ public interface BrowserService {
 
 	Map<String, Map<String, String>> getPropertiesGroupsbyId(String paramString) throws RepositoryException, AccessDeniedException, PathNotFoundException, DatabaseException, UnknownException, WebserviceException, IOException, ParseException, NoSuchPropertyException, NoSuchGroupException, LockException, ExtensionException, AutomationException, AuthenticationException, PluginNotFoundException, ValidationFormException;
 
-	List<PropertiesGroupsGroups> getPropertiesGroupsGroups(String paramString) throws RepositoryException, AccessDeniedException, PathNotFoundException, DatabaseException, UnknownException, WebserviceException, IOException, ParseException, NoSuchPropertyException, NoSuchGroupException, LockException, ExtensionException, AutomationException, AuthenticationException, PluginNotFoundException, ValidationFormException;
+	//List<PropertiesGroupsGroups> getPropertiesGroupsGroups(String paramString) throws RepositoryException, AccessDeniedException, PathNotFoundException, DatabaseException, UnknownException, WebserviceException, IOException, ParseException, NoSuchPropertyException, NoSuchGroupException, LockException, ExtensionException, AutomationException, AuthenticationException, PluginNotFoundException, ValidationFormException;
 
 	List<String> getYearList(String paramString1, String paramString2) throws RepositoryException, AccessDeniedException, PathNotFoundException, DatabaseException, UnknownException, WebserviceException, IOException, ParseException, NoSuchPropertyException, NoSuchGroupException, LockException, ExtensionException, AutomationException, AuthenticationException, PluginNotFoundException, ValidationFormException;
 

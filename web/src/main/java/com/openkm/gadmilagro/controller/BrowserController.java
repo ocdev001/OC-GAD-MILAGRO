@@ -117,11 +117,11 @@ public class BrowserController {
 	}
 
 
-	@GetMapping({"/getPropertiesGroupsGroups"})
+	/*@GetMapping({"/getPropertiesGroupsGroups"})
 	@ResponseBody
 	public List<PropertiesGroupsGroups> getPropertiesGroupsGroups(@RequestParam String okgroup) throws OKMException, WebserviceException, IOException {
 		return this.browserService.getPropertiesGroupsGroups(okgroup);
-	}
+	}*/
 
 	/*@GetMapping({"/getMonthList"})
 	@ResponseBody

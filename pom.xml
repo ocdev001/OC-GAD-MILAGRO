@@ -45,12 +45,12 @@
   </developers>
 
   <properties>
-    <sdk4j.version>3.34</sdk4j.version>
-    <openkm.version>7.1.45</openkm.version>
+    <sdk4j.version>4.9</sdk4j.version>
+    <openkm.version>8.1.12</openkm.version>
 
     <!-- Compiler properties -->
-    <java.version>1.8</java.version>
-    <java.compiler>1.8</java.compiler>
+    <java.version>11</java.version>
+    <java.compiler>11</java.compiler>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 

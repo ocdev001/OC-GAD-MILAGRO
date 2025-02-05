@@ -78,13 +78,13 @@ public class BrowserServiceImpl implements BrowserService {
 	public Document getDocumentById(String docId) throws RepositoryException, AccessDeniedException, PathNotFoundException, DatabaseException, UnknownException, WebserviceException, AuthenticationException {
 		log.debug("getDocumentById({})", docId);
 		OKMWebservices ws = this.wsDao.getOKMWebservices("admin");
-		return ws.document.getDocumentProperties(docId);
+		return ws.document.getProperties(docId);
 	}
 
 	public List<Note> getNotesById(String docId) throws RepositoryException, AccessDeniedException, PathNotFoundException, DatabaseException, UnknownException, WebserviceException, AuthenticationException {
 		OKMWebservices ws = this.wsDao.getOKMWebservices("admin");
 		log.debug("getDocumentById({})", docId);
-		List<Note> notes = ws.note.listNotes(docId);
+		List<Note> notes = ws.note.list(docId);
 		for (Note note : notes)
 			System.out.println(note);
 		return notes;
@@ -146,11 +146,23 @@ public class BrowserServiceImpl implements BrowserService {
 			String yeargad="";
 			QueryParams params = new QueryParams();
 			Map<String, String> properties = new HashMap();
-			System.out.println("Valor del Input: " + author + title + edit + year);
+			System.out.println("Valor del Input: " + author + title + edit + year + content);
 			params.setDomain(QueryParams.DOCUMENT);
 			if(!Objects.equals(content, "")){
 				System.out.println("entro aqui");
 				params.setContent(content);
+				for (QueryResult qr : ws.search.find(params, null)) {
+					uuid = qr.getNode().getUuid();
+					path = ws.document.getPath(uuid);
+					docprops = ws.document.getProperties(uuid);
+					author = docprops.getAuthor();
+					size = docprops.getActualVersion().getSize();
+					size /= 1024L;
+					shortenPath = PathUtils.shortenFileName(path, 35);
+
+					documents.add(new searchForm(content,shortenPath, authorgad, uuid, editgad,yeargad,titlegad,shortenPath,size));
+
+				}
 			}else{
 				if(!author.equals("")){
 					properties.put("okp:gad_milagro.author", author);
@@ -166,29 +178,30 @@ public class BrowserServiceImpl implements BrowserService {
 				}
 
 				params.setProperties(properties);
-			}
-			for (QueryResult qr : ws.search.find(params, null)) {
-				uuid = qr.getNode().getUuid();
-				path = ws.document.getDocumentPath(uuid);
-				docprops = ws.document.getDocumentProperties(uuid);
-				author = docprops.getAuthor();
-				size = docprops.getActualVersion().getSize();
-				size /= 1024L;
-				shortenPath = PathUtils.shortenFileName(path, 35);
-				for (PropertyGroup pGroup : ws.propertyGroup.getPropertyGroups(uuid)) {
-					if(pGroup.getName().equals(cfg.OKG_MILAGRO)){
-						okg=pGroup.getName();
-						Map<String, String> propertiesgad = new HashMap<>();
-						propertiesgad = ws.propertyGroup.getPropertyGroupProperties(uuid, okg);
-						authorgad=propertiesgad.get("okp:gad_milagro.author");
-						titlegad=propertiesgad.get("okp:gad_milagro.title");
-						editgad=propertiesgad.get("okp:gad_milagro.edit");
-						yeargad=propertiesgad.get("okp:gad_milagro.year");
-						documents.add(new searchForm(content,shortenPath, authorgad, uuid, editgad,yeargad,titlegad,shortenPath,size));
+				for (QueryResult qr : ws.search.find(params, null)) {
+					uuid = qr.getNode().getUuid();
+					path = ws.document.getPath(uuid);
+					docprops = ws.document.getProperties(uuid);
+					author = docprops.getAuthor();
+					size = docprops.getActualVersion().getSize();
+					size /= 1024L;
+					shortenPath = PathUtils.shortenFileName(path, 35);
+					for (PropertyGroup pGroup : ws.propertyGroup.getGroups(uuid)) {
+						if(pGroup.getName().equals(cfg.OKG_MILAGRO)){
+							okg=pGroup.getName();
+							Map<String, String> propertiesgad = new HashMap<>();
+							propertiesgad = ws.propertyGroup.getProperties(uuid, okg);
+							authorgad=propertiesgad.get("okp:gad_milagro.author");
+							titlegad=propertiesgad.get("okp:gad_milagro.title");
+							editgad=propertiesgad.get("okp:gad_milagro.edit");
+							yeargad=propertiesgad.get("okp:gad_milagro.year");
+							documents.add(new searchForm(content,shortenPath, authorgad, uuid, editgad,yeargad,titlegad,shortenPath,size));
+						}
 					}
-				}
 
+				}
 			}
+
 			return documents;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -230,10 +243,10 @@ public class BrowserServiceImpl implements BrowserService {
 		Map<String, String> map = new HashMap<>();
 		String selects="";
 		try {
-			for (PropertyGroup pGroup : ws.propertyGroup.getPropertyGroups(uuid)) {
+			for (PropertyGroup pGroup : ws.propertyGroup.getGroups(uuid)) {
 				Map<String, String> groupDetails = new HashMap<>();
 				Map<String, String> properties = new HashMap<>();
-				properties = ws.propertyGroup.getPropertyGroupProperties(uuid, pGroup.getName());
+				properties = ws.propertyGroup.getProperties(uuid, pGroup.getName());
 
 				for (String key : properties.keySet()) {
 					for (FormElement fElement : ws.propertyGroup.getPropertyGroupForm(uuid, pGroup.getName())) {
@@ -305,10 +318,10 @@ public class BrowserServiceImpl implements BrowserService {
 
 
 
-			for (PropertyGroup pGroup : ws.propertyGroup.getPropertyGroups(uuid)) {
+			for (PropertyGroup pGroup : ws.propertyGroup.getGroups(uuid)) {
 				Map<String, String> groupDetails = new HashMap<>();
 				Map<String, String> properties = new HashMap<>();
-				properties = ws.propertyGroup.getPropertyGroupProperties(uuid, pGroup.getName());
+				properties = ws.propertyGroup.getProperties(uuid, pGroup.getName());
 				SimpleDateFormat formatoOriginal = new SimpleDateFormat("yyyyMMddHHmmss");
 				SimpleDateFormat formatoDeseado = new SimpleDateFormat("yyyy-MM-dd");
 				for (String key : properties.keySet()) {
@@ -361,7 +374,7 @@ public class BrowserServiceImpl implements BrowserService {
 		return okggroups;
 	}
 
-	public List<PropertiesGroupsGroups> getPropertiesGroupsGroups(String okpgroups) throws RepositoryException, AccessDeniedException, DatabaseException, UnknownException, WebserviceException, AuthenticationException {
+	/*public List<PropertiesGroupsGroups> getPropertiesGroupsGroups(String okpgroups) throws RepositoryException, AccessDeniedException, DatabaseException, UnknownException, WebserviceException, AuthenticationException {
 		List<PropertiesGroupsGroups> okgmetadatagroups = new ArrayList<>();
 		OKMWebservices ws = this.wsDao.getOKMWebservices("admin");
 		String nameLabel = "";
@@ -374,7 +387,7 @@ public class BrowserServiceImpl implements BrowserService {
 			log.warn("getYearList: no search results");
 		}
 		return okgmetadatagroups;
-	}
+	}*/
 
 	public List<String> getYearList(String cif, String docType) throws RepositoryException, AccessDeniedException, DatabaseException, UnknownException, WebserviceException, AuthenticationException {
 		log.debug("getYearList({}, {})", cif, docType);

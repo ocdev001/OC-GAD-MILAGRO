@@ -63,7 +63,7 @@ public class DocumentServiceImpl implements DocumentService {
 	public Document getProperties(String node) throws RepositoryException, PathNotFoundException, DatabaseException,
 			UnknownException, WebserviceException, AccessDeniedException, AuthenticationException {
 		OKMWebservices ws = wsDao.getOKMWebservices(WSCacheDAO.ADMIN_USER);
-		return ws.document.getDocumentProperties(node);
+		return ws.document.getProperties(node);
 	}
 	@Override
 	public InputStream getContentInPdfFormat(String node) throws RepositoryException, PathNotFoundException, DatabaseException,

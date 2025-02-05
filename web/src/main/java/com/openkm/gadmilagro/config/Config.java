@@ -80,7 +80,7 @@ public class Config {
 		String baseUrl = this.OPENKM_URL_PREVIEW;
 		if (!this.OPENKM_URL_PREVIEW.endsWith("/"))
 			baseUrl = baseUrl + "/";
-		return baseUrl + "Preview?previewEngine=" + "PDF.js";
+		return baseUrl + "preview/pdfjs/web/viewer.jsp?file=";
 	}
 
 	public Locale getDefaultLocale() {

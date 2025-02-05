@@ -33,6 +33,7 @@ import com.openkm.sdk4j.impl.OKMWebservices;
 
 import java.net.URLEncoder;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
@@ -101,15 +102,17 @@ public class PropertyGroupController {
 		if (StringUtils.isNotEmpty(uuid)) {
 			previewUrl.append(this.cfg.getPreviewToOpenKMUrl());
 			String token = ws.node.generateDownloadToken(uuid, true, false, null);
-			previewUrl.append("&pdfUrl=");
+			//previewUrl.append("&pdfUrl=");
 			previewUrl.append(getPdfUrl(token));
 		}
 		return previewUrl.toString();
 	}
 
 	private String getPdfUrl(String token) throws Exception {
-		String previewUrl = this.cfg.OPENKM_URL_PREVIEW + "/frontend/Converter?PTK=" + token + "&inline=true&toPdf=true&downloadType=preview";
-		return URLEncoder.encode(previewUrl, "UTF-8");
+		String previewUrl = cfg.OPENKM_URL_PREVIEW + "/converter?PTK=" + token +
+				"&inline=true&toPdf=true&downloadType=preview&version=1.0";
+		log.debug("previewUrl: {}", previewUrl);
+		return URLEncoder.encode(previewUrl, StandardCharsets.UTF_8);
 	}
 
 	private SimpleNodeBase getFirstDocument(List<SimpleNodeBase> docs) {

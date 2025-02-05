@@ -81,7 +81,7 @@
 
     $(document).ready(function () {
 
-      var pagination = new Pagination('#documentTable', 5);
+      var pagination = new Pagination('#documentTable', 10);
       pagination.generatePagination();
       pagination.handlePaginationClicks();
       const searchButton = $('#searchButton');
